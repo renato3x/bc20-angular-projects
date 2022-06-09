@@ -1,0 +1,11 @@
+<h2>Ng If</h2>
+
+
+<label for="">Mostrar/Remover parágrafo</label>
+<input type="checkbox" checked="true" #checkbox (input)="checkbox">
+
+<p *ngIf="checkbox.checked == true">
+  Estou aparecendo na tela!
+</p>
+
+<hr>

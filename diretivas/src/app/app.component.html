@@ -1,0 +1,21 @@
+<h2>Ng Style</h2>
+
+<p
+  [ngStyle]="{
+    fontFamily: 'Ubuntu',
+    color: corDoParagrafo
+  }"
+>
+  Mudar de cor
+</p>
+
+<button (click)="mudarCorDoParagrafo('red')">Mudar para vermelho</button>
+<button (click)="mudarCorDoParagrafo('green')">Mudar para verde</button>
+<button (click)="mudarCorDoParagrafo('blue')">Mudar para azul</button>
+<button (click)="mudarCorDoParagrafo('purple')">Mudar para roxo</button>
+
+<hr>
+
+<app-diretiva-ngclass></app-diretiva-ngclass>
+<app-diretiva-ngif></app-diretiva-ngif>
+<app-diretiva-ngfor></app-diretiva-ngfor>
