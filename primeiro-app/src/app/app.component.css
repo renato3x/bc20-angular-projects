@@ -1,0 +1,24 @@
+.container {
+  min-height: 100vh;
+  padding: 0 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container .counter {
+  font-size: 80px;
+}
+
+.container input[type="button"] {
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background: #219ebc;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px #00000088;
+}

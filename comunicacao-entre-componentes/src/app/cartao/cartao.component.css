@@ -1,0 +1,15 @@
+.cartao {
+  max-width: 300px;
+  min-height: 350px;
+  border: 3px solid orangered;
+}
+
+h4 {
+  font-family: sans-serif;
+  text-align: center;
+  border-bottom: 3px solid orangered;
+}
+
+p {
+  font-family: sans-serif;
+}

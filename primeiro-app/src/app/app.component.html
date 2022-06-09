@@ -1,0 +1,18 @@
+
+<div class="container">
+  <input type="button" [value]="simbolos[1]" (click)="decrementar()">
+  <!-- Property Binding -->
+  <p class="counter">
+    {{ contador }}
+    <!-- String Interpolation -->
+  </p>
+  <input type="button" [value]="simbolos[0]" (click)="incrementar()">
+  <input type="number" placeholder="Digite um número" (input)="adicionarValor($event)">
+</div>
+
+<!--
+  String interpolation
+  Property Binding
+  Event Binding
+  Two Way Data Binding
+ -->
