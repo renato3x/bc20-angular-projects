@@ -1,0 +1,27 @@
+.todo-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-controls .todo-control-input {
+  height: 2rem;
+  border-radius: .5rem;
+  border: none;
+  margin-bottom: .5rem;
+  outline: none;
+  padding: .5rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.todo-controls .todo-control-button {
+  height: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: .5rem;
+  border: none;
+  padding: 0;
+  background: #67bf67;
+  color: white;
+  cursor: pointer;
+}

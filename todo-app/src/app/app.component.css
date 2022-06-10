@@ -1,0 +1,19 @@
+.todo-container {
+  height: 100vh;
+  box-sizing: border-box;
+  padding: 3rem 25rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-container .todo-items {
+  flex-grow: 1;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-container .todo-items todo-item + todo-item {
+  margin-top: 1rem;
+}

@@ -1,0 +1,30 @@
+.todo-item {
+  background: #484C69;
+  padding: .5rem;
+  min-height: 2rem;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: .5rem;
+}
+
+.todo-item-content {
+  flex-grow: 1;
+  color: white;
+  font-size: .9rem;
+}
+
+.todo-item-delete {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  opacity: 0;
+  cursor: pointer;
+  transition: opacity .1s;
+}
+
+.todo-item:hover .todo-item-delete {
+  opacity: 1;
+}
