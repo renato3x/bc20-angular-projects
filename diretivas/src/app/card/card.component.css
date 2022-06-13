@@ -1,0 +1,31 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 5px double #2267c2;
+  font-family: 'Ubuntu';
+  min-height: 350px;
+  width: 300px;
+}
+
+.card h4 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+  border-bottom: 5px double rgb(34, 103, 194);
+  height: 50px;
+  font-size: 35px;
+}
+
+.card .body {
+  flex-grow: 1;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  max-height: 295px;
+  overflow-y: auto;
+}
+
+.card .body p {
+  text-align: justify;
+}

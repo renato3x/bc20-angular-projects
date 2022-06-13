@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DiretivaNgforComponent implements OnInit {
 
-  nomes: string[] = ['Dani Pereira', 'Daniel Martins', 'Claudia Yokota', 'Fernando FR', 'Manuela Diniz', 'Tatiana Chiacchio']
+  nomes: string[] = ['Danielle', 'Daniel', 'Claudia', 'Fernando', 'Manuela', 'Tatiana', 'Amanda', 'André', 'Robinson']
 
   constructor() { }
 
