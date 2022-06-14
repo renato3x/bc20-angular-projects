@@ -7,8 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   saldo: number = 1000
+  mostrarComponente: boolean = true
 
   alterarSaldo(valor: number) {
     this.saldo += valor
+  }
+
+  toggleMostrarComponente(): void {
+    this.mostrarComponente = !this.mostrarComponente
   }
 }

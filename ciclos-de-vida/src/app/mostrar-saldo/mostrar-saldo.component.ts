@@ -1,11 +1,11 @@
-import { AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnDestroy, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mostrar-saldo',
   templateUrl: './mostrar-saldo.component.html',
   styleUrls: ['./mostrar-saldo.component.css']
 })
-export class MostrarSaldoComponent implements OnChanges, OnInit, AfterContentInit, AfterViewInit {
+export class MostrarSaldoComponent implements OnChanges, OnInit, AfterContentInit, AfterViewInit/*, OnDestroy*/ {
 
   @Input()
   appSaldo: number = 697
@@ -16,6 +16,10 @@ export class MostrarSaldoComponent implements OnChanges, OnInit, AfterContentIni
   paraSaldoAnterior!: ElementRef<HTMLParagraphElement>
 
   constructor() {}
+
+  ngOnDestroy(): void {
+    console.log('%cngOnDestroy executado!', 'font-size: 20px; color: green;')
+  }
 
   ngOnChanges(changes: SimpleChanges): void { //1°
     console.log('%cngOnChanges executado!', 'font-size: 20px; color: red;')
