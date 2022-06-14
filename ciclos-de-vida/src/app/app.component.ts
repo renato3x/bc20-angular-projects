@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ciclos-de-vida';
+  saldo: number = 0
+
+  alterarSaldo(valor: number) {
+    this.saldo += valor
+  }
 }
