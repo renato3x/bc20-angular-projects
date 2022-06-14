@@ -1,19 +1,46 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterContentInit, AfterViewInit, Component, DoCheck, ElementRef, Input, OnChanges, OnInit, SimpleChanges, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-mostrar-saldo',
   templateUrl: './mostrar-saldo.component.html',
   styleUrls: ['./mostrar-saldo.component.css']
 })
-export class MostrarSaldoComponent implements OnChanges {
+export class MostrarSaldoComponent implements OnChanges, OnInit, AfterContentInit, AfterViewInit {
 
   @Input()
-  appSaldo: number = 0
+  appSaldo: number = 697
 
-  constructor() { }
+  appSaldoAnterior: number | string = ''
 
-  ngOnChanges(changes: SimpleChanges): void {
+  @ViewChild('paraSaldoAnterior')
+  paraSaldoAnterior!: ElementRef<HTMLParagraphElement>
+
+  constructor() {}
+
+  ngOnChanges(changes: SimpleChanges): void { //1°
     console.log('%cngOnChanges executado!', 'font-size: 20px; color: red;')
-    console.log(changes)
+
+    if (changes['appSaldo'].previousValue != undefined) {
+      this.appSaldoAnterior = changes['appSaldo'].previousValue
+    } else {
+      this.appSaldoAnterior = 'Saldo não informado.'
+    }
+  }
+
+  ngOnInit(): void { // 2°
+    console.log('%cngOnInit executado!', 'font-size: 20px; color: red;')
+    console.log(this.appSaldo)
+  }
+
+/*   ngDoCheck(): void {
+    console.log('%cngDoCheck executado!', 'font-size: 20px; color: red;')
+  } */
+
+  ngAfterContentInit(): void { // 4°
+    console.log('%cngAfterContentInit executado!', 'font-size: 20px; color: red;')
+  }
+
+  ngAfterViewInit(): void { // 6°
+    console.log(this.paraSaldoAnterior.nativeElement.innerText)
   }
 }

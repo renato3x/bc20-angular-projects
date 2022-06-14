@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  saldo: number = 0
+  saldo: number = 1000
 
   alterarSaldo(valor: number) {
     this.saldo += valor
