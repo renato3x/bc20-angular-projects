@@ -1,0 +1,11 @@
+<div class="todo-controls">
+  <input
+    type="text"
+    class="todo-control-input"
+    placeholder="Adicione uma tarefa"
+    #todoControlInput
+    (input)="saveInTodoContent()"
+    (keyup.enter)="emitOnSaveTodo()"
+  >
+  <button type="button" class="todo-control-button" (click)="emitOnSaveTodo()">Adicionar</button>
+</div>

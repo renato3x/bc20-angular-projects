@@ -1,0 +1,13 @@
+<app-mostrar-saldo
+  [appSaldo]="saldo"
+  *ngIf="mostrarComponente"
+></app-mostrar-saldo>
+
+<button (click)="toggleMostrarComponente()">Mostrar/Esconder componente</button>
+
+<button (click)="alterarSaldo(25)">25</button>
+<button (click)="alterarSaldo(50)">+50</button>
+<button (click)="alterarSaldo(100)">+100</button>
+<button (click)="alterarSaldo(-25)">-25</button>
+<button (click)="alterarSaldo(-50)">-50</button>
+<button (click)="alterarSaldo(-100)">-100</button>

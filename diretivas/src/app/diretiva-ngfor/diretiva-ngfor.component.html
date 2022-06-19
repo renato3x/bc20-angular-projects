@@ -1,0 +1,28 @@
+<h2>Ng For</h2>
+
+<!-- <table border="1">
+  <tr>
+    <th>Nomes</th>
+  </tr>
+  <tr *ngFor="let nome of nomes">
+    <td>
+      {{ nome }}
+    </td>
+  </tr>
+</table> -->
+
+<table border="1">
+  <tr>
+    <th>Nomes</th>
+  </tr>
+  <ng-container *ngFor="let nome of nomes">
+    <tr *ngIf="nome.length > 6">
+      <td>{{ nome }}</td>
+    </tr>
+  </ng-container>
+</table>
+
+<input type="text" #nomeInput>
+<button (click)="add(nomeInput.value)">Adicionar</button>
+
+<hr>

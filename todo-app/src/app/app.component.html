@@ -1,0 +1,11 @@
+<div class="todo-container">
+  <todo-controls (onSaveTodo)="saveTodo($event)"></todo-controls>
+  <div class="todo-items">
+    <todo-item
+      *ngFor="let todo of todos; let i = index"
+      [todoContent]="todo"
+      [todoId]="i"
+      (onDeleteTodo)="deleteTodo($event)"
+    ></todo-item>
+  </div>
+</div>
