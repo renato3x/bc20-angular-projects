@@ -1,0 +1,85 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <h1>Cadastre-se</h1>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Seus dados</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form action="" #formUsuario="ngForm" (ngSubmit)="salvarUsuario()">
+        <mat-form-field appearance="outline">
+          <mat-label>Nome</mat-label>
+          <input
+            type="text"
+            matInput [(ngModel)]="user.nome"
+            name="campo-nome"
+            required
+            #inputNome="ngModel"
+          >
+          <mat-error>
+            <span>Campo inválido</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input
+            type="text"
+            matInput
+            [(ngModel)]="user.username"
+            name="campo-username"
+            required
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input
+            type="email"
+            matInput
+            [(ngModel)]="user.email"
+            name="campo-email"
+            required
+            email
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Senha</mat-label>
+          <input
+            type="password"
+            matInput
+            [(ngModel)]="user.senha"
+            name="campo-senha"
+            required
+            minlength="8"
+            #inputSenha="ngModel"
+          >
+          <mat-error>
+            <!-- <span *ngIf="inputSenha.errors?.['required']">Este campo é obrigatório</span> -->
+            <span *ngIf="inputSenha.getError('required')">Este campo é obrigatório</span>
+            <!-- <span *ngIf="inputSenha.errors?.['minlength']">A senha precisa ter, no mínimo, 8 caracteres</span> -->
+            <span *ngIf="inputSenha.getError('minlength')">A senha precisa ter, no mínimo, 8 caracteres</span>
+          </mat-error>
+        </mat-form-field>
+
+        <mat-radio-group [(ngModel)]="user.genero" name="campo-gen" required>
+          <mat-radio-button value="masc">Masculino</mat-radio-button>
+          <mat-radio-button value="femi">Feminino</mat-radio-button>
+          <mat-radio-button value="outro">Outro</mat-radio-button>
+        </mat-radio-group>
+
+        <section>
+          <mat-checkbox [(ngModel)]="user.aceitaTermosDeCondicao" name="input-termos" required>
+            Aceito os <a href="#">Termos de condicações</a>
+          </mat-checkbox>
+        </section>
+
+        <button type="submit" mat-stroked-button color="warn" [disabled]="formUsuario.invalid">Registrar</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
