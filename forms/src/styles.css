@@ -6,3 +6,24 @@ body {
   font-family: Roboto, "Helvetica Neue", sans-serif;
   background: #424242;
 }
+
+.container {
+  height: calc(100vh - 64px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}
+
+section {
+  margin-top: 16px;
+}

@@ -1,6 +1,6 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="accent">
   <mat-toolbar-row>
-    <h1>FormsModule</h1>
+    <h1>ReactiveFormsModule</h1>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="container">
@@ -9,13 +9,14 @@
       <mat-card-title>Seus dados</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form action="">
+      <form action="" [formGroup]="formUsuario" (ngSubmit)="enviar()">
         <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
           <input
             type="text"
             matInput
             name="campo-nome"
+            formControlName="nome"
           >
           <mat-error></mat-error>
         </mat-form-field>
@@ -26,6 +27,7 @@
             type="text"
             matInput
             name="campo-username"
+            formControlName="username"
           >
         </mat-form-field>
 
@@ -35,6 +37,7 @@
             type="email"
             matInput
             name="campo-email"
+            formControlName="email"
           >
         </mat-form-field>
 
@@ -44,23 +47,36 @@
             type="password"
             matInput
             name="campo-senha"
+            formControlName="senha"
           >
-          <mat-error></mat-error>
+          <mat-error>
+            <span *ngIf="formUsuario.get('senha')?.getError('required')">
+              Este campo é obrigatório
+            </span>
+            <span *ngIf="formUsuario.get('senha')?.getError('minlength')">
+              Este campo deve ter no mínimo 8 caracteres
+            </span>
+          </mat-error>
         </mat-form-field>
 
-        <mat-radio-group name="campo-gen">
+        <mat-radio-group name="campo-gen" formControlName="genero">
           <mat-radio-button value="masc">Masculino</mat-radio-button>
           <mat-radio-button value="femi">Feminino</mat-radio-button>
           <mat-radio-button value="outro">Outro</mat-radio-button>
         </mat-radio-group>
 
         <section>
-          <mat-checkbox name="input-termos">
+          <mat-checkbox name="input-termos" formControlName="termos">
             Aceito os <a href="#">Termos de condições</a>
           </mat-checkbox>
         </section>
 
-        <button type="submit" mat-stroked-button color="warn">Registrar</button>
+        <button
+          type="submit"
+          mat-stroked-button
+          color="warn"
+          [disabled]="formUsuario.invalid"
+        >Registrar</button>
       </form>
     </mat-card-content>
   </mat-card>
