@@ -65,6 +65,21 @@
           <mat-radio-button value="outro">Outro</mat-radio-button>
         </mat-radio-group>
 
+        <section formArrayName="telefones">
+          <mat-form-field appearance="outline" *ngFor="let campoTel of tels.controls; let i = index">
+            <mat-label>Telefone</mat-label>
+            <input
+              type="tel"
+              matInput
+              name="telefone"
+              [formControlName]="i"
+            >
+          </mat-form-field>
+          <button mat-raised-button color="warn" type="button" (click)="adicionarCampoTelefone()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </section>
+
         <section>
           <mat-checkbox name="input-termos" formControlName="termos">
             Aceito os <a href="#">Termos de condições</a>
