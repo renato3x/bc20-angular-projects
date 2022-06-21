@@ -9,19 +9,15 @@
       <mat-card-title>Seus dados</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form action="" #formUsuario="ngForm" (ngSubmit)="salvarUsuario()">
+      <form action="">
         <mat-form-field appearance="outline">
           <mat-label>Nome</mat-label>
           <input
             type="text"
-            matInput [(ngModel)]="user.nome"
+            matInput
             name="campo-nome"
-            required
-            #inputNome="ngModel"
           >
-          <mat-error>
-            <span>Campo inválido</span>
-          </mat-error>
+          <mat-error></mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">
@@ -29,9 +25,7 @@
           <input
             type="text"
             matInput
-            [(ngModel)]="user.username"
             name="campo-username"
-            required
           >
         </mat-form-field>
 
@@ -40,10 +34,7 @@
           <input
             type="email"
             matInput
-            [(ngModel)]="user.email"
             name="campo-email"
-            required
-            email
           >
         </mat-form-field>
 
@@ -52,35 +43,25 @@
           <input
             type="password"
             matInput
-            [(ngModel)]="user.senha"
             name="campo-senha"
-            required
-            minlength="8"
-            #inputSenha="ngModel"
           >
-          <mat-error>
-            <!-- <span *ngIf="inputSenha.errors?.['required']">Este campo é obrigatório</span> -->
-            <span *ngIf="inputSenha.getError('required')">Este campo é obrigatório</span>
-            <!-- <span *ngIf="inputSenha.errors?.['minlength']">A senha precisa ter, no mínimo, 8 caracteres</span> -->
-            <span *ngIf="inputSenha.getError('minlength')">A senha precisa ter, no mínimo, 8 caracteres</span>
-          </mat-error>
+          <mat-error></mat-error>
         </mat-form-field>
 
-        <mat-radio-group [(ngModel)]="user.genero" name="campo-gen" required>
+        <mat-radio-group name="campo-gen">
           <mat-radio-button value="masc">Masculino</mat-radio-button>
           <mat-radio-button value="femi">Feminino</mat-radio-button>
           <mat-radio-button value="outro">Outro</mat-radio-button>
         </mat-radio-group>
 
         <section>
-          <mat-checkbox [(ngModel)]="user.aceitaTermosDeCondicao" name="input-termos" required>
-            Aceito os <a href="#">Termos de condicações</a>
+          <mat-checkbox name="input-termos">
+            Aceito os <a href="#">Termos de condições</a>
           </mat-checkbox>
         </section>
 
-        <button type="submit" mat-stroked-button color="warn" [disabled]="formUsuario.invalid">Registrar</button>
+        <button type="submit" mat-stroked-button color="warn">Registrar</button>
       </form>
     </mat-card-content>
   </mat-card>
 </div>
-<app-reactive-forms></app-reactive-forms>
