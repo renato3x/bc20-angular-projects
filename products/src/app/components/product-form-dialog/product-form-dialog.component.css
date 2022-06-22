@@ -1,0 +1,12 @@
+.dialog-content {
+  width: 450px;
+}
+
+.dialog-content form {
+  display: flex;
+  flex-direction: column;
+}
+
+.dialog-content form button + button {
+  margin-top: 16px;
+}

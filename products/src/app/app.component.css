@@ -1,0 +1,28 @@
+.container {
+  min-height: 100vh;
+  background: #e7e7e7;
+}
+
+mat-drawer {
+  width: 200px;
+}
+
+mat-toolbar {
+  height: 100%;
+}
+
+mat-drawer-content {
+  box-sizing: border-box;
+  padding: 16px 32px;
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-auto-rows: 500px;
+  gap: 15px;
+  justify-content: center;
+}
+
+#add-product {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+}

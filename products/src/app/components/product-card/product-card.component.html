@@ -1,0 +1,13 @@
+<mat-card>
+  <img [src]="imgSrc" mat-card-image>
+  <mat-card-content>
+    <mat-card-title>{{ productName }}</mat-card-title>
+    <mat-card-subtitle>{{ productPrice | currency }}</mat-card-subtitle>
+  </mat-card-content>
+  <mat-divider></mat-divider>
+  <mat-card-actions>
+    <button mat-stroked-button color="basic" (click)="buy()">
+      Comprar
+    </button>
+  </mat-card-actions>
+</mat-card>

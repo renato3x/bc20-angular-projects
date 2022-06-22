@@ -1,0 +1,44 @@
+<h1 mat-dialog-title>Novo Produto</h1>
+<section mat-dialog-content class="dialog-content">
+  <form [formGroup]="productForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Nome</mat-label>
+      <input
+        type="text"
+        matInput
+        placeholder="Ex: Smartphone"
+        name="product-name"
+        formControlName="name"
+      >
+      <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Preço</mat-label>
+      <input
+        type="number"
+        matInput
+        placeholder="Ex: 500"
+        name="product-price"
+        formControlName="price"
+      >
+      <mat-error></mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Foto</mat-label>
+      <input
+        type="url"
+        matInput
+        placeholder="Ex: https://link-to-your-pick.com"
+        name="product-picture"
+        formControlName="picture"
+      >
+      <mat-error></mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="primary" [mat-dialog-close]="productForm.value" [disabled]="productForm.invalid">
+      Adicionar <mat-icon>add</mat-icon>
+    </button>
+    <button mat-raised-button color="warn" mat-dialog-close>
+      Cancelar <mat-icon>close</mat-icon>
+    </button>
+  </form>
+</section>
